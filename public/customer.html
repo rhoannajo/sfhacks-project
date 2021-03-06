@@ -15,18 +15,20 @@
       <h2>Edit Profile</h2>
       <table>
         <tr>
-          <td>Gator email</td>
-          <td id="customerEmail"></td>
+          <td>Name</td>
+          <td><input placeholder="Ally Gator" id="customerName" required></td>
         </tr>
+
         <tr>
-        <td>Gator name</td>
-          <td><input id="customerName"></td>
-        </tr>
-        <tr>
-          <td>Gator phone</td>
-          <td><input id="customerPhone"></td>
+        <td>Major</td>
+          <td><input placeholder="Computer Science" id="customerMajor" required></td>
         </tr>
       </table>
+
+      <label for="customerBio">Tell us about yourself:</label>
+      <br>
+      <textarea id="customerBio" name="customerBio" rows="5" cols="33" placeholder="I love to..."></textarea>
+      
       <br><br>
       <button id="saveProfile">Save profile</button>
       <br><br>
