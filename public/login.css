@@ -40,8 +40,8 @@
 }
 
 .photo-login {
-    max-height: 3em;
-    max-width: 50%;
+    min-height: 3em;
+    width: auto;
 }
 
 .btn-warning {
@@ -49,3 +49,8 @@
     border: none !important;
     
 }
+
+.width40 {
+    width: 45% !important;
+    margin:auto;
+  }
