@@ -1,5 +1,9 @@
+.body-font {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
 .purple-back {
-    background-color: #A89DBF;
+    background-color: #A89DBF !important;
 }
 
 .transparent-back {
@@ -24,7 +28,7 @@
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: 1000;
 }
 
 .font-login {
@@ -36,6 +40,17 @@
 }
 
 .photo-login {
-    max-height: 3em;
-    max-width: 50%;
+    height: 3em;
+    width: auto;
 }
+
+.btn-warning {
+    background-color: #FFEA95 !important;
+    border: none !important;
+    
+}
+
+.w-45 {
+    width: 45% !important;
+    margin:auto;
+  }

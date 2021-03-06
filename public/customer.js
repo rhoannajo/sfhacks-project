@@ -4,7 +4,7 @@ firebase.auth().onAuthStateChanged(function(newUser) {
   user = newUser;
   if (user) {
     const db = firebase.firestore();
-    db.collection("customers").doc(user.email).onSnapshot(function(doc) {
+    db.collection("gators").doc(user.email).onSnapshot(function(doc) {
       const cust = doc.data();
       if (cust) {
         document.getElementById('customerName').setAttribute('value', cust.name);
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(newUser) {
 
 document.getElementById('saveProfile').addEventListener('click', function(ev) {
   const db = firebase.firestore();
-  var docRef = db.collection('customers').doc(user.email);
+  var docRef = db.collection('gators').doc(user.email);
   docRef.set({
     name: document.getElementById('customerName').value,
     email: user.email,
