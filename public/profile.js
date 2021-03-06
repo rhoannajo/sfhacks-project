@@ -4,7 +4,7 @@ firebase.auth().onAuthStateChanged(function(newUser) {
   user = newUser;
   if (user) {
     const db = firebase.firestore();
-    db.collection("profiles").doc(Profile).onSnapshot(function(doc) {
+    db.collection("profiles").doc(profile).onSnapshot(function(doc) {
       const profile = doc.data();
       if (profile) {
         document.getElementById('profileName').setAttribute('value', profile.name);
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(newUser) {
 
 document.getElementById('saveProfile').addEventListener('click', function(ev) {
   const db = firebase.firestore();
-  var docRef = db.collection('profiles').doc(Profile);
+  var docRef = db.collection('profiles').doc(profile);
   docRef.set({
     name: document.getElementById('profileName').value,
     age: document.getElementById('profileAge').value,
@@ -25,3 +25,6 @@ document.getElementById('saveProfile').addEventListener('click', function(ev) {
   })
 })
 
+$("#saveProfile").click(function(){
+  location.reload(true);
+});
