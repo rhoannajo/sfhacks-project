@@ -26,3 +26,16 @@
 .bold {
     font-weight: bold;
 }
+
+.font-login {
+    font-family: 'OpenSans-ExtraBold', sans-serif !important;
+}
+
+.round {
+    border-radius: 1em !important;
+}
+
+.photo-login {
+    max-height: 3em;
+    max-width: 50%;
+}
