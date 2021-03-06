@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <h1>Login</h1>
-    <label>Username</label>
-    <input placeholder="Username" type=text required/>
-    <br/>
-
-    <label>Password</label>
-    <input placeholder="Password" type=password required/>
-    <br/>
-
-    <button type=submit>submit</button>
-    <br/>
-    <a href="#">New user? Create an account!</a>
+<body class="purple-back">
+    <form class="card py-5 px-3 w-50 my-5 mx-auto transparent-back">
+        <div class="form-group">
+            <h1 class="text-center"><span class="main-font">Log</span><span class="main-fontyellow">in</span></h1>
+            <label for="exampleInputEmail1" class="bold">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="bold">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+        </div>
+        <br/>
+    
+        <button type="submit" class="btn btn-primary dark-purple">Submit</button>
+        <br/>
+        <div class="text-center">
+            <a href="#register.html">New user? Create an account</a>
+        </div>
+        <br/>
+      </form> 
 </body>
 </html>

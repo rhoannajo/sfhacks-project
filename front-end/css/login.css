@@ -1,0 +1,28 @@
+.purple-back {
+    background-color: #A89DBF;
+}
+
+.transparent-back {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.main-font {
+    font-family: serif;
+    font-weight: bolder;
+    color:#5D4292;
+}
+
+.main-fontyellow {
+    font-family: serif;
+    font-weight: bold;
+    color: #FFEA95;
+}
+
+.dark-purple {
+    background-color:#5D4292 !important;
+    color: white !important;
+}
+
+.bold {
+    font-weight: bold;
+}
