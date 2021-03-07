@@ -26,4 +26,3 @@ document.getElementById('saveProfile').addEventListener('click', function(ev) {
     email: user.email,
   })
 })
-
