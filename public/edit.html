@@ -3,10 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta password="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="shortcut icon" type="image/jpg" href="../pictures/favicon.png"/>
+    <link href="./login.css" rel="stylesheet" type="text/css" />
+    <link href="./menu.css" rel="stylesheet" type="text/css" />
+
+    <!--link to fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!--link to bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="purple-back">
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div class = "options">
+              <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./about.html">About Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <header class="showcase">
+        <div class="container showcase-inner w-auto">
+            <form class="card py-3 px-3 w-45 my-5 mx-auto transparent-back round" id="registration-form">
+              <h5 class="text-center"><img class="photo-login pb-2 min" src="../pictures/editprofile.png"></h5>
+              <form class="card py-3 pt-4 px-5 w-45 my-5 mx-auto transparent-back round form-inline" id="registration-form">
+                <label for="firstname" class="bold">First name, Last name, and Age</label>
+                <div class="input-group"> 
+                  <!-- declaration for first field -->
+                  <input type="text" class="form-control input-sm" placeholder="First name" required /> 
+                  <!-- reducong the gap between them to zero -->
+                  <span class="input-group-btn" style="width:10px;"></span> 
+                  <!-- declaration for second field -->
+                  <input type="text" class="form-control input-sm" placeholder="Last name" required /> 
+                  <!-- reducong the gap between them to zero -->
+                  <span class="input-group-btn" style="width:10px;"></span> 
+                  <input type="number" class="form-control input-sm" placeholder="Age" /> 
+                </div>
+                <br/>
+                <div class="registration-form">
+                  <label for="major" class="bold">Major</label>
+                  <input type="text" class="form-control" placeholder="Enter major" required>
+                  <br/>
+              </div>
+                  <div class="registration-form">
+                      <label for="email" class="bold">Email address</label><label class="registerp">&nbsp&nbsp*must be an SFSU email</label>
+                      <input type="email" pattern=".+@mail.sfsu.edu" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  </div>
+                <br/>
+                <div class="registration-form">
+                    <label for="password" class="bold">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+                <br/>
+
+                <div class="registration-form">
+                    <label for="password" class="bold">Confirm Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+                <br/>
+            
+                <button type="submit" id="submit" class="btn dark-purple">Submit</button>
+                <br/>
+                <div class="text-center">
+                    <a class="btn btn-warning b-0 m-0" href="login.html">Already have an account? Log in</a>
+                </div>
+                <br/>
+            </form> 
+        </div>    
+    </header>
+
+    <script src= 
+    "https://www.gstatic.com/firebasejs/3.7.4/firebase.js"> 
+    </script> 
+      
+      <script> 
+        var firebaseConfig = { 
+          apiKey: "AIzaSyDnAfm2rBOKQVxKDXh5KsTr4r83Q-hBIiU",
+          authDomain: "gatorlink-fe67d.firebaseapp.com",
+          databaseURL: "https://gatorlink-fe67d-default-rtdb.firebaseio.com",
+          projectId: "gatorlink-fe67d",
+          storageBucket: "gatorlink-fe67d.appspot.com",
+          messagingSenderId: "398115674330",
+          appId: "1:398115674330:web:5a96520ea1c7d96b5d2de3",
+          measurementId: "G-PVSC2E9ZCV"
+        }; 
     
+        firebase.initializeApp(firebaseConfig); 
+    
+        var messagesRef = firebase.database() 
+          .ref('Collected Data'); 
+        
+        document.getElementById('registration-form') 
+          .addEventListener('submit', submitForm); 
+    
+        function submitForm(e) { 
+          e.preventDefault(); 
+          // Get values 
+          var email = getInputVal('email'); 
+          var password = getInputVal('password'); 
+          saveMessage(email, password); 
+          firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            // Signed in 
+            var user = userCredential.user;
+            // ...
+          })
+          .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+          });
+          document.getElementById('registration-form').reset(); 
+
+        } 
+    
+        // Function to get get form values 
+        function getInputVal(id) { 
+          return document.getElementById(id).value; 
+        } 
+    
+        // Save message to firebase 
+        function saveMessage(email, password) { 
+          var newMessageRef = messagesRef.push(); 
+          newMessageRef.set({
+            email: email, 
+            password: password, 
+          }); 
+        } 
+      </script> 
 </body>
 </html>
