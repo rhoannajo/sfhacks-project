@@ -114,8 +114,12 @@
           // Get values 
           var email = getInputVal('email'); 
           var password = getInputVal('password'); 
+          var firstname = getInputVal('firstname');
+          var lastname = getInputVal('lastname');
+          var year = getInputVal('year');
+          var major = getInputVal('major');
           saveMessage(email, password); 
-          firebase.auth().createUserWithEmailAndPassword(email, password)
+          firebase.auth().createUserWithEmailAndPassword(email, password, firstname, lastname, year, major)
           .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;

@@ -119,7 +119,7 @@
           var year = getInputVal('year');
           var major = getInputVal('major');
           saveMessage(email, password, major); 
-          firebase.auth().createUserWithEmailAndPassword(email, password)
+          firebase.auth().createUserWithEmailAndPassword(email, password, firstname, lastname, year, major)
           .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
