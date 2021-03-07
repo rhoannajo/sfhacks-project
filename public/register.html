@@ -33,17 +33,17 @@
             <form class="card py-5 px-3 w-45 my-5 mx-auto transparent-back round">
                 <div class="form-group">
                     <h5 class="text-center"><img class="photo-login" src="../pictures/signup-logo.png"></h5>
-                    <label for="exampleInputEmail1" class="bold">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <label for="email" class="bold">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                 </div>
                 <br/>
                 <div class="form-group">
-                <label for="exampleInputPassword1" class="bold">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                <label for="password" class="bold">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
                 <br/>
             
-                <button type="submit" class="btn dark-purple">Submit</button>
+                <button type="submit" id="register" class="btn dark-purple">Submit</button>
                 <br/>
                 <div class="text-center">
                     <a class="btn btn-warning b-0 m-0" href="login.html">Already have an account? Log in</a>
@@ -51,6 +51,17 @@
                 <br/>
             </form> 
         </div>    
-    </header>   
+    </header>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.2.10/firebase-app.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+<script>
+
+</script>
+
 </body>
 </html>
