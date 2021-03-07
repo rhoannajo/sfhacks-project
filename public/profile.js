@@ -3,7 +3,7 @@ let user;
 firebase.auth().onAuthStateChanged(function(newUser) {
   user = newUser;
   if (user) {
-    const db = firebase.firestore();
+    const db = firebase.database();
     db.collection("customers").doc(user.email).onSnapshot(function(doc) {
       const cust = doc.data();
       if (cust) {
