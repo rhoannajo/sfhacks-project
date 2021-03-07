@@ -8,6 +8,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+font {
   font-family: 'Open Sans', sans-serif !important;
 }
 
@@ -91,6 +94,10 @@ body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+}
+
+h2 {
+  font-weight: bold !important;
 }
 
 html {
@@ -188,4 +195,33 @@ button {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+}
+
+.rj {
+  padding-top: 17px;
+  font-size: 25px;
+}
+
+.jay {
+  padding-top: 17px;
+  font-size: 25px;
+}
+
+.tolby {
+  padding-top: 17px;
+  font-size: 25px;
+}
+
+.fatima {
+  padding-top: 17px;
+  font-size: 25px;
+}
+
+.antonio {
+  padding-top: 17px;
+  font-size: 25px;
+}
+
+.desc {
+  font-size: 14px;
 }
