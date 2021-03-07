@@ -43,19 +43,19 @@
                 <label for="firstname" class="bold">First name, Last name, and graduation year</label>
                 <div class="input-group"> 
                   <!-- declaration for first field -->
-                  <input type="text" class="form-control input-sm" placeholder="First name" required /> 
+                  <input type="text" id="firstname"class="form-control input-sm" placeholder="First name" required /> 
                   <!-- reducong the gap between them to zero -->
                   <span class="input-group-btn" style="width:10px;"></span> 
                   <!-- declaration for second field -->
-                  <input type="text" class="form-control input-sm" placeholder="Last name" required /> 
+                  <input type="text" id="lastname" class="form-control input-sm" placeholder="Last name" required /> 
                   <!-- reducong the gap between them to zero -->
                   <span class="input-group-btn" style="width:10px;"></span> 
-                  <input type="number" min="2021" class="form-control input-sm" placeholder="Grad Year" required/> 
+                  <input type="number" id ="year" min="2021" class="form-control input-sm" placeholder="Grad Year" required/> 
                 </div>
                 <br/>
                 <div class="registration-form">
                   <label for="major" class="bold">Major</label>
-                  <input type="text" class="form-control" placeholder="Enter major" required>
+                  <input type="text" id="major" class="form-control" placeholder="Enter major" required>
                   <br/>
               </div>
                   <div class="registration-form">
@@ -114,7 +114,11 @@
           // Get values 
           var email = getInputVal('email'); 
           var password = getInputVal('password'); 
-          saveMessage(email, password); 
+          var firstname = getInputVal('firstname');
+          var lastname = getInputVal('lastname');
+          var year = getInputVal('year');
+          var major = getInputVal('major');
+          saveMessage(email, password, major); 
           firebase.auth().createUserWithEmailAndPassword(email, password)
           .then((userCredential) => {
             // Signed in 
@@ -136,11 +140,15 @@
         } 
     
         // Save message to firebase 
-        function saveMessage(email, password) { 
+        function saveMessage(email, password, firstname, lastname, year, major) { 
           var newMessageRef = messagesRef.push(); 
           newMessageRef.set({
             email: email, 
             password: password, 
+            firstname: firstname,
+            lastname: lastname,
+            year: year,
+            major: major,
           }); 
         } 
       </script> 
