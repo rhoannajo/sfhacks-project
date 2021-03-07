@@ -91,13 +91,23 @@
     
         function submitForm(e) { 
           e.preventDefault(); 
-    
           // Get values 
           var email = getInputVal('email'); 
           var password = getInputVal('password'); 
-    
           saveMessage(email, password); 
+          firebase.auth().createUserWithEmailAndPassword(email, password);
+          .then((userCredential) => {
+            // Signed in 
+            var user = userCredential.user;
+            // ...
+          })
+          .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+          });
           document.getElementById('registration-form').reset(); 
+
         } 
     
         // Function to get get form values 
