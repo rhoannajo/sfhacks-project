@@ -95,6 +95,9 @@
             // Get values 
             var email = getInputVal('email'); 
             var password = getInputVal('password'); 
+            
+            signInSuccessUrl: '<https://gatorlink-fe67d.web.app/home.html#>'
+
       
             saveMessage(email, password); 
             firebase.auth().signInWithEmailAndPassword(email, password)
@@ -102,11 +105,14 @@
               // Signed in
               var user = userCredential.user;
               // ...
+              // Simulate a mouse click:
+              window.location.href = "http://www.https://gatorlink-fe67d.web.app/home.html#.com";
             })
             .catch((error) => {
               var errorCode = error.code;
               var errorMessage = error.message;
             });
+
             document.getElementById('login-form').reset(); 
           } 
       
