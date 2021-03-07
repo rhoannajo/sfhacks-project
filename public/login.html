@@ -98,8 +98,6 @@
             
             signInSuccessUrl: '<https://gatorlink-fe67d.web.app/home.html#>'
 
-      
-            saveMessage(email, password); 
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
               // Signed in
@@ -112,23 +110,13 @@
               var errorCode = error.code;
               var errorMessage = error.message;
             });
-
-            document.getElementById('login-form').reset(); 
           } 
       
           // Function to get get form values 
           function getInputVal(id) { 
             return document.getElementById(id).value; 
           } 
-      
-          // Save message to firebase 
-          function saveMessage(email, password) { 
-            var newMessageRef = messagesRef.push(); 
-            newMessageRef.set({
-              email: email, 
-              password: password, 
-            }); 
-          } 
+
         </script> 
   </body>
 </html>
