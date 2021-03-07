@@ -40,7 +40,7 @@
             <form class="card py-3 px-3 w-45 my-5 mx-auto transparent-back round" id="registration-form">
               <h5 class="text-center"><img class="photo-login pb-2 min" src="../pictures/editprofile.png"></h5>
               <form class="card py-3 pt-4 px-5 w-45 my-5 mx-auto transparent-back round form-inline" id="registration-form">
-                <label for="firstname" class="bold">First name, Last name, and Age</label>
+                <label for="firstname" class="bold">First name, Last name, and graduation year</label>
                 <div class="input-group"> 
                   <!-- declaration for first field -->
                   <input type="text" class="form-control input-sm" placeholder="First name" required /> 
@@ -50,7 +50,7 @@
                   <input type="text" class="form-control input-sm" placeholder="Last name" required /> 
                   <!-- reducong the gap between them to zero -->
                   <span class="input-group-btn" style="width:10px;"></span> 
-                  <input type="number" class="form-control input-sm" placeholder="Age" /> 
+                  <input type="number" min="2021" class="form-control input-sm" placeholder="Grad Year" required/> 
                 </div>
                 <br/>
                 <div class="registration-form">
