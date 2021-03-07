@@ -37,12 +37,31 @@
 
     <header class="showcase">
         <div class="container showcase-inner w-auto">
-            <form class="card py-5 px-3 w-45 my-5 mx-auto transparent-back round" id="registration-form">
-                <div class="registration-form">
-                    <h5 class="text-center"><img class="photo-login" src="../pictures/signup-logo.png"></h5>
-                    <label for="email" class="bold">Email address</label>
-                    <input type="email" pattern=".+@mail.sfsu.edu" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <form class="card py-3 px-3 w-45 my-5 mx-auto transparent-back round" id="registration-form">
+              <h5 class="text-center"><img class="photo-login pb-2" src="../pictures/signup-logo.png"></h5>
+              <form class="card py-3 pt-4 px-5 w-45 my-5 mx-auto transparent-back round form-inline" id="registration-form">
+                <label for="firstname" class="bold">First name, Last name, and Age</label>
+                <div class="input-group"> 
+                  <!-- declaration for first field -->
+                  <input type="text" class="form-control input-sm" placeholder="First name" required /> 
+                  <!-- reducong the gap between them to zero -->
+                  <span class="input-group-btn" style="width:10px;"></span> 
+                  <!-- declaration for second field -->
+                  <input type="text" class="form-control input-sm" placeholder="Last name" required /> 
+                  <!-- reducong the gap between them to zero -->
+                  <span class="input-group-btn" style="width:10px;"></span> 
+                  <input type="number" class="form-control input-sm" placeholder="Age" /> 
                 </div>
+                <br/>
+                <div class="registration-form">
+                  <label for="major" class="bold">Major</label>
+                  <input type="text" class="form-control" placeholder="Enter major" required>
+                  <br/>
+              </div>
+                  <div class="registration-form">
+                      <label for="email" class="bold">Email address</label><label class="registerp">&nbsp&nbsp*must be an SFSU email</label>
+                      <input type="email" pattern=".+@mail.sfsu.edu" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  </div>
                 <br/>
                 <div class="registration-form">
                     <label for="password" class="bold">Password</label>
