@@ -124,6 +124,41 @@
   <div class="gallery-cell"></div>
 </div>
 </div>
+<div hidden id="users" class="lightPurp"><h1 class="txt-dark">Registered Gators</h1></div>
+
+
 </body>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script src= 
+"https://www.gstatic.com/firebasejs/3.7.4/firebase.js"> 
+  </script> 
+  
+  <script> 
+    var firebaseConfig = { 
+      apiKey: "AIzaSyDnAfm2rBOKQVxKDXh5KsTr4r83Q-hBIiU",
+      authDomain: "gatorlink-fe67d.firebaseapp.com",
+      databaseURL: "https://gatorlink-fe67d-default-rtdb.firebaseio.com",
+      projectId: "gatorlink-fe67d",
+      storageBucket: "gatorlink-fe67d.appspot.com",
+      messagingSenderId: "398115674330",
+      appId: "1:398115674330:web:5a96520ea1c7d96b5d2de3",
+      measurementId: "G-PVSC2E9ZCV"
+    }; 
+
+  firebase.initializeApp(firebaseConfig); 
+    
+  var messagesRef = firebase.database().ref('Collected Data'); 
+
+  messagesRef.on('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    var childData = childSnapshot.val();
+  //   $('#users').append(JSON.stringify(childSnapshot.val()));
+    $('#users').append(`<div class="card">${childData.email}</div>`);
+
+  });
+});
+
+  </script>  
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>
